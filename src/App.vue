@@ -15,6 +15,8 @@ export default {
 		arr1: [1, 2, 3],
 		arr2: ['x', 'y', 'z'],
 		arr3: [1, 2, 3],
+		obj: {a: 1, b: 2, c: 3},
+		obj: {x: 1, y: 2, z: 3},
 }
 }}
 
@@ -40,5 +42,8 @@ export default {
 	<p>{{ arr2[1] }}</p>
 	<p>{{ arr2[2] }}</p>
 	<p>{{ arr3[0] + arr3[1] + arr3[2] }}</p>
-	
+	{{ obj.a }}
+	{{ obj.b }}
+	{{ obj.c }}
+	{{ obj.x + obj.y + obj.z }}
 </template>ru 
