@@ -3,14 +3,25 @@ export default {
   name: 'App',
   data() {
     return {
-      age: 25
+      showParagraphs: true
+    }
+  },
+  methods: {
+    toggleParagraphs: function() {
+      this.showParagraphs = !this.showParagraphs;
     }
   }
 }
 </script>
 
 <template>
-  <p v-if="age < 18">подросток</p>
-  <p v-else-if="age >= 19 && age <= 25">молодой человек</p>
-  <p v-else-if="age >= 26">мужчина</p>
+  <button @click="toggleParagraphs">
+    {{ showParagraphs ? 'Скрыть абзацы' : 'Показать абзацы' }}
+  </button>
+  
+  <template v-if="showParagraphs">
+    <p>Первый абзац</p>
+    <p>Второй абзац</p>
+    <p>Третий абзац</p>
+  </template>
 </template>
