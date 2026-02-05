@@ -23,12 +23,18 @@ export default {
 </script>
 
 <template>
-  <button @click="toggle1">Тогглить абзац 1</button>
+  <button @click="toggle1">
+    {{ visible1 ? 'Скрыть абзац 1' : 'Показать абзац 1' }}
+  </button>
   <p v-if="visible1">Абзац 1</p>
   
-  <button @click="toggle2">Тогглить абзац 2</button>
+  <button @click="toggle2">
+    {{ visible2 ? 'Скрыть абзац 2' : 'Показать абзац 2' }}
+  </button>
   <p v-if="visible2">Абзац 2</p>
   
-  <button @click="toggle3">Тогглить абзац 3</button>
+  <button @click="toggle3">
+    {{ visible3 ? 'Скрыть абзац 3' : 'Показать абзац 3' }}
+  </button>
   <p v-if="visible3">Абзац 3</p>
 </template>
