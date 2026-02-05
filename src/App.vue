@@ -49,7 +49,11 @@ export default {
       const dayName = this.getDayName(dayIndex);
       
       alert(`Сегодня: ${dayName}`);
+    },
+	showSquare: function(num) {
+      alert(num * num);
     }
+
 }}
 
 </script>
@@ -79,9 +83,12 @@ export default {
 	{{ obj.c }}
 	{{ obj.x + obj.y + obj.z }}
 	{{ showDate() }}
-	<button @click="showDate">Показать дату (клик)</button>
+	<p><button @click="showDate">Показать дату (клик)</button></p>
 	<button @mouseenter="showDate">Показать дату (наведение)</button>
 	{{ showSum() }}
-	<button @click="showTodayDay">Показать название сегодняшнего дня недели</button>
+	<p><button @click="showTodayDay">Показать название сегодняшнего дня недели</button></p>
+	<p><button @click="showSquare(2)">Квадрат числа 2</button></p>
+    <p><button @click="showSquare(3)">Квадрат числа 3</button></p>
+	
 </template>ru 
 
