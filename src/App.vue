@@ -23,8 +23,10 @@ export default {
     showDate: function() {
       const now = new Date();
 	  alert(new Date().toLocaleString());
-    }
-	
+    },
+	showSum: function() {
+      alert(this.num1 + this.num2);
+	}
 }}
 
 </script>
@@ -56,4 +58,5 @@ export default {
 	{{ showDate() }}
 	<button @click="showDate">Показать дату (клик)</button>
 	<button @mouseenter="showDate">Показать дату (наведение)</button>
+	{{ showSum() }}
 </template>ru 
