@@ -3,11 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
-      obj: {
-        user1: '100$',
-        user2: '200$',
-        user3: '300$'
-      }
+      items: [1, 2, 3]
     }
   }
 }
@@ -15,22 +11,16 @@ export default {
 
 <template>
   <!-- Задание 1 -->
-  <ul>
-    <li v-for="value in obj" :key="value">{{ value }}</li>
-  </ul>
+  <div v-for="item in items" :key="item">
+    <p>{{ item }}</p>
+    <p class="divider"></p>
+  </div>
   
   <!-- Задание 2 -->
   <ul>
-    <li v-for="(value, key) in obj" :key="key">{{ key }} - {{ value }}</li>
-  </ul>
-  
-  <!-- Задание 3 -->
-  <ul>
-    <li v-for="(value, key, index) in obj" :key="key">{{ key }} - {{ value }} - {{ index }}</li>
-  </ul>
-  
-  <!-- Задание 4 -->
-  <ul>
-    <li v-for="(value, key, index) in obj" :key="key">{{ key }} - {{ value }} - {{ index + 1 }}</li>
+    <template v-for="item in items">
+      <li :key="item">{{ item }}</li>
+      <li class="divider" :key="'div' + item"></li>
+    </template>
   </ul>
 </template>
