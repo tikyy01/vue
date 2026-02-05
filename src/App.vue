@@ -3,25 +3,20 @@ export default {
   name: 'App',
   data() {
     return {
-      showParagraphs: true
+      visible: true
     }
   },
   methods: {
-    toggleParagraphs: function() {
-      this.showParagraphs = !this.showParagraphs;
+    toggle: function() {
+      this.visible = !this.visible;
     }
   }
 }
 </script>
 
 <template>
-  <button @click="toggleParagraphs">
-    {{ showParagraphs ? 'Скрыть абзацы' : 'Показать абзацы' }}
+  <button @click="toggle">
+    {{ visible ? 'Скрыть абзац' : 'Показать абзац' }}
   </button>
-  
-  <template v-if="showParagraphs">
-    <p>Первый абзац</p>
-    <p>Второй абзац</p>
-    <p>Третий абзац</p>
-  </template>
+  <p v-show="visible">Тогглируемый абзац</p>
 </template>
