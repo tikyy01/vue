@@ -3,13 +3,15 @@ export default {
   name: 'App',
   data() {
     return {
-      isAdmin: true
+      day: 3, // Текущий день недели
+      days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
     }
   }
 }
 </script>
 
 <template>
-  <p v-if="isAdmin">Администратор</p>
-  <p v-else>Пользователь</p>
+  <p v-for="(dayName, index) in days" :key="index" v-if="day === index">
+    {{ dayName }}
+  </p>
 </template>
