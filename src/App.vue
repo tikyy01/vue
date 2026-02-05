@@ -16,6 +16,7 @@ export default {
 		arr2: ['x', 'y', 'z'],
 		arr3: [1, 2, 3],
 		obj: {x: 1, y: 2, z: 3},
+		text: 'Начальное значение'
 	}
 },
   methods: {
@@ -52,6 +53,12 @@ export default {
     },
 	showSquare: function(num) {
       alert(num * num);
+    },
+	change1: function() {
+      this.text = 'Первое значение';
+    },
+    change2: function() {
+      this.text = 'Второе значение';
     }
 
 }}
@@ -89,6 +96,9 @@ export default {
 	<p><button @click="showTodayDay">Показать название сегодняшнего дня недели</button></p>
 	<p><button @click="showSquare(2)">Квадрат числа 2</button></p>
     <p><button @click="showSquare(3)">Квадрат числа 3</button></p>
-	
+	<p>{{ text }}</p>
+	<button @click="change1">Изменить текст</button>
+	<button @click="change1">Первый текст</button>
+    <button @click="change2">Второй текст</button>
 </template>ru 
 
