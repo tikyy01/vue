@@ -12,7 +12,9 @@ export default {
 		num1: 1,
 		num2: 2,
 		num3: 3,
-    
+		arr1: [1, 2, 3],
+		arr2: ['x', 'y', 'z'],
+		arr3: [1, 2, 3],
 }
 }}
 
@@ -30,4 +32,13 @@ export default {
   	{{ var1 + var2 }}
     {{  num * num}}
   	{{ num1 + num2 + num3 }}
+
+	{{ arr1[0] }}
+	{{ arr1[1] }}
+	{{ arr1[2] }}
+	<p>{{ arr2[0] }}</p>
+	<p>{{ arr2[1] }}</p>
+	<p>{{ arr2[2] }}</p>
+	<p>{{ arr3[0] + arr3[1] + arr3[2] }}</p>
+	
 </template>ru 
