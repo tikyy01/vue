@@ -3,15 +3,14 @@ export default {
   name: 'App',
   data() {
     return {
-      day: 3, // Текущий день недели
-      days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
+      age: 25
     }
   }
 }
 </script>
 
 <template>
-  <p v-for="(dayName, index) in days" :key="index" v-if="day === index">
-    {{ dayName }}
-  </p>
+  <p v-if="age < 18">подросток</p>
+  <p v-else-if="age >= 19 && age <= 25">молодой человек</p>
+  <p v-else-if="age >= 26">мужчина</p>
 </template>
