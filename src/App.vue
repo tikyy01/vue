@@ -3,36 +3,32 @@ export default {
   name: 'App',
   data() {
     return {
-      visible: false
+      visible1: true,
+      visible2: true,
+      visible3: true
     }
   },
   methods: {
-    show: function() {
-      this.visible = true;
+    toggle1: function() {
+      this.visible1 = !this.visible1;
     },
-    hide: function() {
-      this.visible = false;
+    toggle2: function() {
+      this.visible2 = !this.visible2;
+    },
+    toggle3: function() {
+      this.visible3 = !this.visible3;
     }
   }
 }
 </script>
 
 <template>
-  <!-- Задание 1: Кнопка для показа абзаца -->
-  <button @click="show">Показать абзац</button>
-  <p v-if="visible">Этот абзац можно показывать и скрывать</p>
+  <button @click="toggle1">Тогглить абзац 1</button>
+  <p v-if="visible1">Абзац 1</p>
   
-  <!-- Задание 2: Две кнопки для показа и скрытия -->
-  <div style="margin-top: 20px;">
-    <button @click="show">Показать</button>
-    <button @click="hide">Скрыть</button>
-    <p v-if="visible">Абзац с двумя кнопками управления</p>
-  </div>
+  <button @click="toggle2">Тогглить абзац 2</button>
+  <p v-if="visible2">Абзац 2</p>
   
-  <!-- Задание 3: Только одна видимая кнопка -->
-  <div style="margin-top: 20px;">
-    <button v-if="!visible" @click="show">Показать абзац</button>
-    <button v-else @click="hide">Скрыть абзац</button>
-    <p v-if="visible">Абзац с умной кнопкой</p>
-  </div>
+  <button @click="toggle3">Тогглить абзац 3</button>
+  <p v-if="visible3">Абзац 3</p>
 </template>
