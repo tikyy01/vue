@@ -15,7 +15,6 @@ export default {
 		arr1: [1, 2, 3],
 		arr2: ['x', 'y', 'z'],
 		arr3: [1, 2, 3],
-		obj: {a: 1, b: 2, c: 3},
 		obj: {x: 1, y: 2, z: 3},
 	}
 },
@@ -26,7 +25,31 @@ export default {
     },
 	showSum: function() {
       alert(this.num1 + this.num2);
-	}
+	},
+	 getDayName(dayNumber) {
+      const days = [
+        'Воскресенье',
+        'Понедельник',
+        'Вторник',
+        'Среда',
+        'Четверг',
+        'Пятница',
+        'Суббота'
+      ];
+      if (dayNumber < 0 || dayNumber > 6 || isNaN(dayNumber)) {
+        return 'Неверный номер дня';
+      }
+      
+      return days[dayNumber];
+    },
+    
+    showTodayDay() {
+      const today = new Date();
+      const dayIndex = today.getDay();
+      const dayName = this.getDayName(dayIndex);
+      
+      alert(`Сегодня: ${dayName}`);
+    }
 }}
 
 </script>
@@ -59,4 +82,6 @@ export default {
 	<button @click="showDate">Показать дату (клик)</button>
 	<button @mouseenter="showDate">Показать дату (наведение)</button>
 	{{ showSum() }}
+	<button @click="showTodayDay">Показать название сегодняшнего дня недели</button>
 </template>ru 
+
