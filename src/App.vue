@@ -22,8 +22,9 @@ export default {
   methods: {
     showDate: function() {
       const now = new Date();
-      alert('Текущая дата и время: ' + now.toLocaleString());
+	  alert(new Date().toLocaleString());
     }
+	
 }}
 
 </script>
@@ -53,4 +54,6 @@ export default {
 	{{ obj.c }}
 	{{ obj.x + obj.y + obj.z }}
 	{{ showDate() }}
+	<button @click="showDate">Показать дату (клик)</button>
+	<button @mouseenter="showDate">Показать дату (наведение)</button>
 </template>ru 
