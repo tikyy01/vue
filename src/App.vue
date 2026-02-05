@@ -17,7 +17,13 @@ export default {
 		arr3: [1, 2, 3],
 		obj: {a: 1, b: 2, c: 3},
 		obj: {x: 1, y: 2, z: 3},
-}
+	}
+},
+  methods: {
+    showDate: function() {
+      const now = new Date();
+      alert('Текущая дата и время: ' + now.toLocaleString());
+    }
 }}
 
 </script>
@@ -46,4 +52,5 @@ export default {
 	{{ obj.b }}
 	{{ obj.c }}
 	{{ obj.x + obj.y + obj.z }}
+	{{ showDate() }}
 </template>ru 
