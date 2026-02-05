@@ -3,21 +3,16 @@ export default {
   name: 'App',
   data() {
     return {
-      items: [1, 2, 3, 4, 5]
+      arr: ['x', 'y', 'z']
     }
   }
 }
 </script>
 
 <template>
-  <!-- Задание 1: Каждый элемент в своем div -->
-  <div v-for="item in items" :key="item">{{ item }}</div>
-  
-  <!-- Задание 2: Квадрат каждого элемента -->
-  <div v-for="item in items" :key="'sq' + item">{{ item * item }}</div>
-  
-  <!-- Задание 3: Элементы в виде списка ul -->
   <ul>
-    <li v-for="item in items" :key="item">{{ item }}</li>
+    <li v-for="(elem, key) in arr" :key="key">
+      {{ key + 1 }}
+    </li>
   </ul>
 </template>
