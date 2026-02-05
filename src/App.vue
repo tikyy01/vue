@@ -3,20 +3,21 @@ export default {
   name: 'App',
   data() {
     return {
-      visible: true
-    }
-  },
-  methods: {
-    toggle: function() {
-      this.visible = !this.visible;
+      items: [1, 2, 3, 4, 5]
     }
   }
 }
 </script>
 
 <template>
-  <button @click="toggle">
-    {{ visible ? 'Скрыть абзац' : 'Показать абзац' }}
-  </button>
-  <p v-show="visible">Тогглируемый абзац</p>
+  <!-- Задание 1: Каждый элемент в своем div -->
+  <div v-for="item in items" :key="item">{{ item }}</div>
+  
+  <!-- Задание 2: Квадрат каждого элемента -->
+  <div v-for="item in items" :key="'sq' + item">{{ item * item }}</div>
+  
+  <!-- Задание 3: Элементы в виде списка ul -->
+  <ul>
+    <li v-for="item in items" :key="item">{{ item }}</li>
+  </ul>
 </template>
