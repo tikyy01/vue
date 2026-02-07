@@ -1,39 +1,9 @@
 <script>
 export default {
-  name: 'App',
-  data() {
-    return {
-      // Задание 1
-      hrefs: [
-        {href: '1.html', text: 'text1'},
-        {href: '2.html', text: 'text2'},
-        {href: '3.html', text: 'text3'}
-      ],
-      // Задание 2
-      products: [
-        {name: 'product1', price: 100, quantity: 5},
-        {name: 'product2', price: 200, quantity: 4},
-        {name: 'product3', price: 300, quantity: 3}
-      ]
-    }
-  }
+  name: 'App'
 }
 </script>
 
 <template>
-  <!-- Задание 1 -->
-  <ul>
-    <li v-for="link in hrefs" :key="link.href">
-      <a :href="link.href">{{ link.text }}</a>
-    </li>
-  </ul>
-  
-  <!-- Задание 2 -->
-  <table>
-    <tr v-for="product in products" :key="product.name">
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.quantity }}</td>
-    </tr>
-  </table>
+  <p v-for="num in 30" :key="num">{{ num }}</p>
 </template>
