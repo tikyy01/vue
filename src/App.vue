@@ -3,7 +3,18 @@ export default {
   name: 'App',
   data() {
     return {
-      items: [1, 2, 3]
+      // Задание 1
+      hrefs: [
+        {href: '1.html', text: 'text1'},
+        {href: '2.html', text: 'text2'},
+        {href: '3.html', text: 'text3'}
+      ],
+      // Задание 2
+      products: [
+        {name: 'product1', price: 100, quantity: 5},
+        {name: 'product2', price: 200, quantity: 4},
+        {name: 'product3', price: 300, quantity: 3}
+      ]
     }
   }
 }
@@ -11,16 +22,18 @@ export default {
 
 <template>
   <!-- Задание 1 -->
-  <div v-for="item in items" :key="item">
-    <p>{{ item }}</p>
-    <p class="divider"></p>
-  </div>
+  <ul>
+    <li v-for="link in hrefs" :key="link.href">
+      <a :href="link.href">{{ link.text }}</a>
+    </li>
+  </ul>
   
   <!-- Задание 2 -->
-  <ul>
-    <template v-for="item in items">
-      <li :key="item">{{ item }}</li>
-      <li class="divider" :key="'div' + item"></li>
-    </template>
-  </ul>
+  <table>
+    <tr v-for="product in products" :key="product.name">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.quantity }}</td>
+    </tr>
+  </table>
 </template>
